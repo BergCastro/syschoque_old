@@ -1,0 +1,1 @@
+import 'admin-lte/bower_components/Ionicons/css/ionicons.min.css'

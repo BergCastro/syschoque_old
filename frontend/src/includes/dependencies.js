@@ -1,0 +1,7 @@
+import './bootstrap'
+import './jquerySlimscroll'
+import './fastclick'
+import './admin-lte'
+import './font-awesome'
+import './ionicons'
+//import './ckeditor'
