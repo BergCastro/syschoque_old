@@ -17,7 +17,7 @@ export default props => (
           <li className="dropdown user user-menu">
             <a href="#" className="dropdown-toggle" data-toggle="dropdown">
               <img src={user} className="user-image" alt="User Image"/>
-              <span className="hidden-xs">Alexander Pierce</span>
+              <span className="hidden-xs">Sgt Castro</span>
             </a>
             <ul className="dropdown-menu">
               
@@ -25,8 +25,8 @@ export default props => (
                 <img src={user} className="img-circle" alt="User Image"/>
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  Lindemberg Nunes de Castro - admin
+                  <small>fireberg2500@hotmail.com</small>
                 </p>
               </li>
               
@@ -41,9 +41,7 @@ export default props => (
             </ul>
           </li>
           
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i className="fa fa-gears"></i></a>
-          </li>
+         
         </ul>
       </div>
     </nav>

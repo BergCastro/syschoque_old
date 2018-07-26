@@ -12,23 +12,23 @@ export default props => (
       
       
       <ul className="sidebar-menu" data-widget="tree">
-        <li className="header">MAIN NAVIGATION</li>
+        <li className="header"></li>
        
         <MenuTree name='Dashboard' icon='dashboard'>
-          <MenuItem name='Dashboard 1' icon='circle-o' />
-          <MenuItem name='Dashboard 2' icon='circle-o' />
+          <MenuItem path='/' name='Dashboard 1' icon='circle-o' />
+          <MenuItem path='/' name='Dashboard 2' icon='circle-o' />
         </MenuTree>
         <MenuTree name='P1' icon='edit'>
-          <MenuItem name='Ofícios' icon='circle-o' />
-          <MenuItem name='Tipos de Ofício' icon='circle-o' />
+          <MenuItem path='/oficios' name='Ofícios' icon='circle-o' />
+          <MenuItem path='/oficios' name='Tipos de Ofício' icon='circle-o' />
         </MenuTree>
         <MenuTree name='P3' icon='edit'>
-          <MenuItem name="OPE's" icon='circle-o' />
-          <MenuItem name="Tipos de OPE's" icon='circle-o' />
+          <MenuItem path='/oficios' name="OPE's" icon='circle-o' />
+          <MenuItem path='/oficios' name="Tipos de OPE's" icon='circle-o' />
         </MenuTree>
          <MenuTree name='ADM' icon='edit'>
-          <MenuItem name='Dados Gerais' icon='circle-o' />
-          <MenuItem name="Usuários" icon='circle-o' />
+          <MenuItem path='/oficios' name='Dados Gerais' icon='circle-o' />
+          <MenuItem path='/oficios' name="Usuários" icon='circle-o' />
         </MenuTree>
         
       </ul>

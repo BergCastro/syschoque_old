@@ -1,12 +1,10 @@
-import React from 'react'
+import React from "react";
 
 export default props => (
-
-    <footer className="main-footer">
+  <footer className="main-footer">
     <div className="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
+      <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2018 BPChoque.</strong> Todos direitos reservados.
   </footer>
-)
+);
