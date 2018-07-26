@@ -1,49 +1,45 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
 import Content from "../common/template/content"
 import ContentHeader from "../common/template/contentHeader"
+import ValueBox from "../common/widget/valueBox"
+import Row from "../common/layout/row"
 
 class Dashboard extends Component {
   render() {
     return (
       <div>
-        <ContentHeader title="Dashboard" small="Ver" />
-        <Content>
-          <div className="box">
-            <div className="box-header with-border">
-              <h3 className="box-title">Title</h3>
-
-              <div className="box-tools pull-right">
-                <button
-                  type="button"
-                  className="btn btn-box-tool"
-                  data-widget="collapse"
-                  data-toggle="tooltip"
-                  title="Collapse"
-                >
-                  <i className="fa fa-minus" />
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-box-tool"
-                  data-widget="remove"
-                  data-toggle="tooltip"
-                  title="Remove"
-                >
-                  <i className="fa fa-times" />
-                </button>
-              </div>
-            </div>
-            <div className="box-body">
-              Start creating your amazing application!
-            </div>
-
-            <div className="box-footer">Footer</div>
-          </div>
+        <ContentHeader title="Dashboard" small="Verao 1.0.0" />
+        <Content>           
+            
+              <Row>
+                <ValueBox
+                  cols="12 4"
+                  color="green"
+                  valor="100"
+                  label="Efetivo do Batalhão"
+                  icon='person'
+                />
+                <ValueBox
+                  cols="12 4"
+                  color="green"
+                  valor="100"
+                  label="Efetivo Operacional COTAM"
+                  icon='person'
+                />
+                <ValueBox
+                  cols="12 4"
+                  color='green'
+                  valor="100"
+                  label="Efetivo Operacional COTAM"
+                  icon='person'
+                />
+              </Row>
+           
         </Content>
       </div>
     );
   }
 }
 
-export default Dashboard
+export default Dashboard;
