@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
 const rootReducer = combineReducers({
-    dashboard: () => ({efeivo: 150})
+    dashboard: () => ({efetivo: 150})
 })
 
 export default rootReducer
