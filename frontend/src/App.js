@@ -9,6 +9,7 @@ import Routes from './routes'
 import Header from './common/template/header'
 import SideBar from './common/template/sidebar'
 import Footer from './common/template/footer'
+import Messages from './common/msg/messages'
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
         <SideBar />
         <Routes />
         <Footer />
+        <Messages />
       </div>
       </BrowserRouter>
     );

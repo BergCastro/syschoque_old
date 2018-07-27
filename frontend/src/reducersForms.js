@@ -1,13 +1,13 @@
-import { UPDATE_EFETIVO_DESC, UPDATE_SUGESTOES, UPDATE_TIPO, GET_COUNT } from '../ope/opeActions'
-import { UPDATE_EFETIVO_DESC_TIPO } from '../tipoOpe/tipoOpeActions'
+import { UPDATE_EFETIVO_DESC, UPDATE_SUGESTOES, UPDATE_TIPO, GET_COUNT } from './ope/opeActions'
+import { UPDATE_EFETIVO_DESC_TIPO } from './tipoOpe/tipoOpeActions'
 import { reducer as formReducer } from 'redux-form'
 import { UPDATE_CONTEUDO, 
          UPDATE_SUGESTOES_OFICIO, 
          UPDATE_TIPO_OFICIO, 
          UPDATE_USER,
          UPDATE_NUMERO,
-         UPDATE_STATUS_ATUAL } from '../oficio/oficioActions'
-import { UPDATE_CONTEUDO_TIPO } from '../tiposOficio/tiposOficioActions'
+         UPDATE_STATUS_ATUAL } from './oficio/oficioActions'
+import { UPDATE_CONTEUDO_TIPO } from './tiposOficio/tiposOficioActions'
 
 
 

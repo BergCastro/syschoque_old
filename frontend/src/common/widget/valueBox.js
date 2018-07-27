@@ -17,7 +17,7 @@ class ValueBox extends React.Component {
             <i className={`ion ion-${props.icon}`} />
           </div>
           <a href={props.path || "#"} className="small-box-footer">
-            More info <i className="fa fa-arrow-circle-right" />
+            {props.textLink || ''} <i className="fa fa-arrow-circle-right" />
           </a>
         </div>
       </Grid>

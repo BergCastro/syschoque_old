@@ -18,9 +18,10 @@ class Dashboard extends Component {
                 <ValueBox
                   cols="12 4"
                   color="green"
-                  valor={props.efetivo}
-                  label="Efetivo do Batalhão"
+                  valor={props.efetivoGeral}
+                  label="Efetivo Geral"
                   icon='person'
+                  textLink='Detalhes'
                 />
                 <ValueBox
                   cols="12 4"
@@ -28,6 +29,7 @@ class Dashboard extends Component {
                   valor="100"
                   label="Efetivo Operacional COTAM"
                   icon='person'
+                  textLink='Detalhes'
                 />
                 <ValueBox
                   cols="12 4"
@@ -35,6 +37,7 @@ class Dashboard extends Component {
                   valor="100"
                   label="Efetivo Operacional COTAM"
                   icon='person'
+                  textLink='Detalhes'
                 />
               </Row>
            
@@ -45,7 +48,7 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = state => ({
-  efetivo: state.dashboard.efetivo
+  efetivoGeral: state.dashboard.efetivoGeral
 })
 
 export default connect(mapStateToProps, null)(Dashboard)
