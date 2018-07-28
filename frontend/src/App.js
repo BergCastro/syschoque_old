@@ -1,7 +1,10 @@
+//import './common/template/includes/dependencies'
+
+//import './common/template/includes/admin-lte'
 import React, { Component } from 'react';
 //import logo from './logo.svg';
 //import './App.css';
-import './common/template/includes/dependencies'
+
 
 import { BrowserRouter } from 'react-router-dom'
 import Routes from './routes'

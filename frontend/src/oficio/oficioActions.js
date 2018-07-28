@@ -178,7 +178,7 @@ export function showDelete(oficio) {
 
 export function init() {
 
-    return [
+    return [ //array de actions possivel por causa do redux multi
         showTabs('tabList', 'tabCreate'),
         selectTab('tabList'),
         getList(),

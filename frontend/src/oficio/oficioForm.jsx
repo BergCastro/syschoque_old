@@ -24,7 +24,7 @@ import LabelAndInput from '../common/form/labelAndInput'
 import LabelAndLabel from '../common/form/labelAndLabel'
 import LabelAndInputHidden from '../common/form/labelAndInputHidden'
 import LabelAndTextArea from '../common/form/labelAndTextArea'
-import LabelAndRTE from '../common/form/labelAndRTE'
+//import LabelAndRTE from '../common/form/labelAndRTE'
 
 import LabelAndSelect from '../common/form/labelAndSelect'
 
@@ -60,7 +60,7 @@ class OficioForm extends Component {
 
         const { conteudo, user, updateUser } = this.props
 
-        updateUser(user.cargo + " " + user.nomeGuerra)
+        updateUser(user.cargo || '' + " " + user.nomeGuerra || '')
 
         //CKEDITOR.replace('editor1')
 
@@ -181,8 +181,7 @@ class OficioForm extends Component {
                     <Field name='destino' component={LabelAndTextArea} readOnly={readOnly}
                         label='Destino' cols='12' placeholder='Informe o local da missão' />
 
-                    <Field name='conteudo' component={LabelAndRTE} readOnly={readOnly}
-                        label='Conteudo' cols='12' placeholder='Informe o local da missão' />
+                    
 
 
 
@@ -194,9 +193,6 @@ class OficioForm extends Component {
 
                     <div className="box-body pad">
 
-                        <textarea id="editor1" name="editor1" rows="10" cols="80">
-                            This is my textarea to be replaced with CKEditor.
-                    </textarea>
 
 
                     </div>

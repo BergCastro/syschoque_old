@@ -1,5 +1,5 @@
 import { logoSspds } from './imagesBase64'
-import domtoimage from 'dom-to-image'
+
 
 
 function formatNumero(number) {
@@ -19,16 +19,6 @@ function formatNumero(number) {
 }
 
 
-function html2Image(html){
-    const temp = document.createElement("div")
-    temp.innerHTML = html
-    const retorno = domtoimage.toPng(temp).then((dataUrl) => dataUrl)
-    return retorno
-
-   
-    
-    
-}
 
 function formatDate(date) {
     const data = new Date(date)
