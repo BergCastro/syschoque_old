@@ -11,7 +11,7 @@ export default props => (
       
       
       
-      <ul className="sidebar-menu" data-widget="tree">
+      <ul className="sidebar-menu tree" data-widget="tree">
         <li className="header"></li>
        
         <MenuTree name='Dashboard' icon='dashboard'>

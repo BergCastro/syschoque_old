@@ -18,7 +18,7 @@ class Navbar extends Component {
     }
   }
   render() {
-    //const { name, email } = this.props.user
+    const { handleClick, logout } = this.props
     return (
       <nav className="navbar navbar-static-top">
         <a
@@ -52,7 +52,7 @@ class Navbar extends Component {
 
                 <li className="user-footer">
                   <div className="pull-right">
-                    <button onClick={() => this.props.logout()} className="btn btn-default btn-flat">
+                    <button onClick={logout} className="btn btn-default btn-flat">
                       Sair
                     </button>
                   </div>

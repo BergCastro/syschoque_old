@@ -2,7 +2,9 @@ import React from 'react'
 
 import NavBar from './navbar' 
 
-export default props => (
+export default props => {
+  
+  return(
     <header className="main-header">
    
     <a href="../../index2.html" className="logo">
@@ -17,4 +19,5 @@ export default props => (
     <NavBar />
     
   </header>
-)
+  )
+}

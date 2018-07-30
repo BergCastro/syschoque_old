@@ -26,11 +26,12 @@ class Dashboard extends Component {
                 <ValueBox
                   cols="12 4"
                   color="green"
-                  valor="100"
-                  label="Efetivo Operacional COTAM"
+                  valor={props.efetivoGeral}
+                  label="Efetivo Geral"
                   icon='person'
                   textLink='Detalhes'
                 />
+                
                 <ValueBox
                   cols="12 4"
                   color='green'

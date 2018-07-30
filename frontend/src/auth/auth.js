@@ -1,5 +1,4 @@
 //import './auth.css'
-//import '../common/template/includes/dependencies'
 import React, { Component } from 'react'
 import { reduxForm, Field } from 'redux-form'
 import { connect } from 'react-redux'
@@ -27,10 +26,19 @@ class Auth extends Component {
         this.state.loginMode ? login(values) : signup(values)
     }
 
+    componentDidMount() {
+        const body = document.querySelector('body').className = 'login-page'
+        console.log(body)
+        
+    }
+   
+
     render() {
         const { loginMode } = this.state
         const { handleSubmit } = this.props
+        
         return (
+            
             <div className="login-box">
                 
                 
@@ -67,6 +75,7 @@ class Auth extends Component {
                 </div>
                 <Messages />
             </div>
+            
         )
     }
 }

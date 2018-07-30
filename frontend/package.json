@@ -9,6 +9,7 @@
     "pdfmake": "^0.1.37",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
+    "react-dependent-script": "^1.1.0",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
     "react-redux-toastr": "^7.4.0",

@@ -12,10 +12,12 @@ export function signup(values) {
 
 function submit(values, url) {
     return dispatch => {
+       
         axios.post(url, values)
             .then(resp => {
                 dispatch([
-                    { type: 'USER_FETCHED', payload: resp.data }
+                    { type: 'USER_FETCHED', payload: resp.data },
+                  // window.location.reload()
                 ])
             })
             .catch(e => {

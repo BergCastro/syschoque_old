@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { reduxForm, Field, formValueSelector } from 'redux-form'
 import { docDefinition } from './oficioPdfConfig'
-import pdfMake from 'pdfmake/build/pdfmake.js'
-import pdfFonts from "pdfmake/build/vfs_fonts"
-import ckeditor from 'admin-lte/bower_components/ckeditor/ckeditor'
+//import pdfMake from 'pdfmake/build/pdfmake.js'
+//import pdfFonts from "pdfmake/build/vfs_fonts"
+//import ckeditor from 'admin-lte/bower_components/ckeditor/ckeditor'
 
 
 
@@ -122,7 +122,7 @@ class OficioForm extends Component {
     }
 
 
-    handlePdfDownload = () => {
+    /*handlePdfDownload = () => {
         pdfMake.vfs = pdfFonts.pdfMake.vfs
         pdfMake.createPdf(docDefinition()).download('ope.pdf')
 
@@ -137,7 +137,7 @@ class OficioForm extends Component {
         const { oficio } = this.props
         pdfMake.vfs = pdfFonts.pdfMake.vfs
         pdfMake.createPdf(docDefinition(oficio)).open();
-    }
+    }*/
 
 
 
