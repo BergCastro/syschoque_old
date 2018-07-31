@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 
 import Oficios from './oficio/oficio'
 import Dashboard from './dashboard/dashboard'
+import Usuarios from './usuario/usuario'
 //import TiposOficio from './tiposOficio/tiposOficio'
 import Auth from './auth/auth'
 
@@ -11,6 +12,7 @@ export default props => (
         <Switch>
             <Route exact path='/' component={Dashboard} />           
             <Route path='/oficios' component={Oficios} />
+            <Route path='/usuarios' component={Usuarios} />
             <Redirect from='*' to='/' />
         </Switch>
     </div>

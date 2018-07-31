@@ -1,11 +1,11 @@
 import axios from 'axios'
-import consts from '../consts'
+import { Urls } from '../consts'
 import { toastr } from 'react-redux-toastr'
 import { initialize } from 'redux-form'
 import { showTabs, selectTab } from '../common/tab/tabActions'
 
 
-const BASE_URL = consts.API_URL
+const BASE_URL = Urls.API_URL
 const INITIAL_VALUES = {conteudo: ''}
 
 export const GET_COUNT_TIPOS = 'GET_COUNT_TIPOS'

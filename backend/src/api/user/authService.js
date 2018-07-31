@@ -49,6 +49,7 @@ const signup = (req, res, next) => {
     const email = req.body.email || ''
     const password = req.body.password || ''
     const confirmPassword = req.body.confirm_password || ''
+    const perfilAcesso = req.body.perfilAcesso
 
     if (!email.match(emailRegex)) {
         return res.status(400).send({ errors: ['O e-mail informado está inválido'] })
@@ -74,7 +75,7 @@ const signup = (req, res, next) => {
         } else if (user) {
             return res.status(400).send({ errors: ['Usuário já cadastrado.'] })
         } else {
-            const newUser = new User({ name, cargo, nomeGuerra, email, password: passwordHash })
+            const newUser = new User({ name, cargo, nomeGuerra, email, password: passwordHash, perfilAcesso })
             newUser.save(err => {
                 if (err) {
                     return sendErrorsFromDB(res, err)
