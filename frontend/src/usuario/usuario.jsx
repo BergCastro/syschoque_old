@@ -57,10 +57,7 @@ class Usuario extends Component {
                                     style={this.styleButtonUpdate}
                                     onClick={this.updateList}>Atualizar</button>
                             </IF>
-                                
-                            
-                            
-                            
+                                                      
 
                         </TabsHeader>
                         <TabsContent>

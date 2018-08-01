@@ -43,6 +43,16 @@ class OficioList extends Component {
                         columns={[
 
                             {
+                                Header: "Cargo",
+                                id: "cargo",
+                                accessor: d => d.cargo,
+                                filterMethod: (filter, rows) =>
+                                    matchSorter(rows, filter.value, { keys: ["cargo"] }),
+                                filterAll: true,
+                                maxWidth: 100
+                                
+                            },
+                            {
                                 Header: "Nome",
                                 id: "name",
                                 accessor: d => d.name,
@@ -62,24 +72,17 @@ class OficioList extends Component {
 
                             },
 
-                            {
-                                Header: "PIN",
-                                id: "pin",
-                                accessor: d => d.pin,
-                                filterable: false,
-                                maxWidth: 80
-                            },
-                          
+                                                     
                             {
                                 Header: "Ações",
                                 id: 'acoes',
                                 accessor: d => (
                                     <div>
-                                    <button className='btn btn-success' >
-                                        <i className='glyphicon glyphicon-search'></i>
-                                    </button>
-                                    <button className='btn btn-warning' >
+                                    <button className='btn btn-warning' onClick={() => this.props.showUpdate(d)}>
                                         <i className='fa fa-pencil'></i>
+                                    </button>
+                                    <button className='btn btn-danger' onClick={() => this.props.showDelete(d)}>
+                                        <i className='fa fa-trash-o'></i>
                                     </button>
                                     </div>
                                 ),
@@ -110,6 +113,6 @@ class OficioList extends Component {
     }
 }
 
-const mapStateToProps = state => ({ list: state.oficio.list })
+const mapStateToProps = state => ({ list: state.usuario.list })
 const mapDispatchToProps = dispatch => bindActionCreators({ getList, showUpdate, showDelete }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(OficioList)

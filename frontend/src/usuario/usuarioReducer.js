@@ -1,16 +1,15 @@
-import { GET_OFICIOS, GET_TIPOS_OFICIO, GET_COUNT_OFICIO } from './oficioActions'
+import { GET_USUARIOS, GET_COUNT_USUARIO } from './usuarioActions'
 
 
-const INITIAL_STATE = { list: [], tiposOficios: [], sugestao: {}, count: 0 }
+const INITIAL_STATE = { list: [],  count: 0 }
 
 
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case GET_OFICIOS:
+        case GET_USUARIOS:
             return { ...state, list: action.payload.data }
-        case GET_TIPOS_OFICIO:
-            return { ...state, tiposOficios: action.payload.data }
-        case GET_COUNT_OFICIO:
+       
+        case GET_COUNT_USUARIO:
             return { ...state, count: action.payload.data }
 
 

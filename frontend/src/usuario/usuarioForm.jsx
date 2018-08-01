@@ -7,20 +7,10 @@ import { cargoList } from "../consts";
 
 import {
   init,
-  updateConteudo,
-  getCount,
-  updateTipoOficio,
-  updateSugestoes,
-  updateUser,
-  updateStatusAtual
-} from "./usuarioActions";
-//import {updateControle} from '../controleDocumento/controleDocumentoActions'
-import LabelAndInput from "../common/form/labelAndInput";
-import LabelAndLabel from "../common/form/labelAndLabel";
-import LabelAndInputHidden from "../common/form/labelAndInputHidden";
-import LabelAndTextArea from "../common/form/labelAndTextArea";
-//import LabelAndRTE from '../common/form/labelAndRTE'
 
+} from "./usuarioActions";
+
+import LabelAndInput from "../common/form/labelAndInput";
 import LabelAndSelect from "../common/form/labelAndSelect";
 
 
@@ -109,7 +99,8 @@ class UsuarioForm extends Component {
             name="password"
             component={LabelAndInput}
             readOnly={readOnly}
-            label="Senha"
+            label="Senha"            
+            type="password"
             cols="12 3"
             placeholder="Informe a senha"
           />
@@ -119,6 +110,7 @@ class UsuarioForm extends Component {
             component={LabelAndInput}
             readOnly={readOnly}
             label="PIN"
+            type="password"
             cols="12 3"
             placeholder="Informe o PIN de 4 dígitos"
           />

@@ -4,7 +4,10 @@
   "private": true,
   "dependencies": {
     "admin-lte": "^2.4.5",
+    "ajv": "^6.0.0",
     "axios": "^0.18.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^7.3.0",
     "match-sorter": "^2.2.3",
     "pdfmake": "^0.1.37",
     "prop-types": "^15.6.2",

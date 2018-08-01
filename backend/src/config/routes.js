@@ -26,12 +26,10 @@ module.exports = function (server) {
     const Oficios = require('../api/oficios/oficiosService')
     Oficios.register(protectedApi, '/oficios')
 
+    const Usuarios = require('../api/user/userService')
+    Usuarios.register(protectedApi, '/usuarios')
+
   
-
-   
-
-    
-
     /*
      * Rotas abertas
      */
@@ -40,6 +38,5 @@ module.exports = function (server) {
 
     const AuthService = require('../api/user/authService')
     openApi.post('/login', AuthService.login)
-    openApi.post('/signup', AuthService.signup)
     openApi.post('/validateToken', AuthService.validateToken)
 }
