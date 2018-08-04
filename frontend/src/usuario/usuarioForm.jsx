@@ -3,11 +3,8 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { reduxForm, Field, formValueSelector } from "redux-form";
 import { createNumberMask, createTextMask } from "redux-form-input-masks";
-
 import { cargoList } from "../consts";
-
 import { init } from "./usuarioActions";
-
 import LabelAndInput from "../common/form/labelAndInput";
 import LabelAndSelect from "../common/form/labelAndSelect";
 
@@ -21,6 +18,10 @@ const matriculaMask = createTextMask({
   pattern: "999.999-9-9"
 });
 
+const pinMask = createTextMask({
+  pattern: "9999"
+});
+
 class UsuarioForm extends Component {
 
   
@@ -31,7 +32,6 @@ class UsuarioForm extends Component {
   }
 
   
-
 
 
   updateCargo = event => {
@@ -121,6 +121,7 @@ class UsuarioForm extends Component {
             type="password"
             cols="12 3"
             placeholder="Informe o PIN de 4 dígitos"
+            {...pinMask}
           />
 
           <Field
