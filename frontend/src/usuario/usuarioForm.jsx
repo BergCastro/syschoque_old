@@ -121,7 +121,7 @@ class UsuarioForm extends Component {
             type="password"
             cols="12 3"
             placeholder="Informe o PIN de 4 dígitos"
-            {...pinMask}
+            
           />
 
           <Field
