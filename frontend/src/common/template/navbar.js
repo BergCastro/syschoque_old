@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import user from "admin-lte/dist/img/user2-160x160.jpg";
+import userPhoto from "admin-lte/dist/img/user2-160x160.jpg";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { logout } from "../../auth/authActions";
@@ -18,7 +18,7 @@ class Navbar extends Component {
     }
   }
   render() {
-    const { handleClick, logout } = this.props
+    const { handleClick, logout, user } = this.props
     return (
       <nav className="navbar navbar-static-top">
         <a
@@ -37,16 +37,16 @@ class Navbar extends Component {
           <ul className="nav navbar-nav">
             <li className="dropdown user user-menu">
               <a href="#" className="dropdown-toggle" data-toggle="dropdown">
-                <img src={user} className="user-image" />
-                <span className="hidden-xs">Sgt Castro</span>
+                <img src={userPhoto} className="user-image" />
+                <span className="hidden-xs">{user.nomeGuerra}</span>
               </a>
               <ul className="dropdown-menu">
                 <li className="user-header">
-                  <img src={user} className="img-circle" />
+                  <img src={userPhoto} className="img-circle" />
 
                   <p>
-                    Lindemberg Nunes de Castro - admin
-                    <small>fireberg2500@hotmail.com</small>
+                    {user.nomeGuerra}
+                    <small>{user.email}</small>
                   </p>
                 </li>
 

@@ -1,6 +1,6 @@
 export const Urls = {
-    API_URL: 'http://192.168.0.123:3003/api',
-    OAPI_URL: 'http://192.168.0.123:3003/oapi',
+    API_URL: 'http://localhost:3003/api',
+    OAPI_URL: 'http://localhost:3003/oapi',
 }
 
 export const cargoList = [

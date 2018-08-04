@@ -2,35 +2,43 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { reduxForm, Field, formValueSelector } from "redux-form";
+import { createNumberMask, createTextMask } from "redux-form-input-masks";
 
 import { cargoList } from "../consts";
 
-import {
-  init,
-
-} from "./usuarioActions";
+import { init } from "./usuarioActions";
 
 import LabelAndInput from "../common/form/labelAndInput";
 import LabelAndSelect from "../common/form/labelAndSelect";
 
-
+const currencyMask = createNumberMask({
+  prefix: "US$ ",
+  suffix: " per item",
+  decimalPlaces: 2,
+  locale: "en-US"
+});
+const matriculaMask = createTextMask({
+  pattern: "999.999-9-9"
+});
 
 class UsuarioForm extends Component {
+
+  
   componentDidMount() {
     //const { conteudo, user, updateUser } = this.props;
-
-   // updateUser(user.cargo || "" + " " + user.nomeGuerra || "");
-
+    // updateUser(user.cargo || "" + " " + user.nomeGuerra || "");
     //CKEDITOR.replace('editor1')
   }
 
   
+
+
+
   updateCargo = event => {
-    
     const value = event.target.value;
 
     //updateStatusAtual(value, user.cargo + " " + user.nomeGuerra);
-    console.log('cargoAtual: '+value)
+    console.log("cargoAtual: " + value);
   };
 
   onChange = value => {
@@ -41,10 +49,9 @@ class UsuarioForm extends Component {
 
   render() {
     const { handleSubmit, readOnly } = this.props;
-    const list = cargoList.map(cargo => cargo.cargo)
+    const list = cargoList.map(cargo => cargo.cargo);
 
     return (
-        
       <form onSubmit={handleSubmit}>
         <div className="box-body">
           <Field
@@ -63,6 +70,7 @@ class UsuarioForm extends Component {
             label="Matrícula"
             cols="12 4"
             placeholder="Informe a matrícula"
+            {...matriculaMask}
           />
 
           <Field
@@ -74,7 +82,6 @@ class UsuarioForm extends Component {
             placeholder="Selecione um tipo!"
             itens={list}
             onChange={this.updateCargo}
-            
           />
 
           <Field
@@ -99,9 +106,10 @@ class UsuarioForm extends Component {
             name="password"
             component={LabelAndInput}
             readOnly={readOnly}
-            label="Senha"            
+            label="Senha"
             type="password"
             cols="12 3"
+            onChange={this.onChangePassword}
             placeholder="Informe a senha"
           />
 
@@ -123,13 +131,6 @@ class UsuarioForm extends Component {
             cols="12"
             placeholder="Informe os perfis serparado por espaços"
           />
-
-
-          
-
-          
-
-         
         </div>
         <div className="box-footer">
           <button type="submit" className={`btn btn-${this.props.submitClass}`}>
@@ -142,7 +143,6 @@ class UsuarioForm extends Component {
           >
             Cancelar
           </button>
-          
         </div>
       </form>
     );
@@ -161,8 +161,11 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       init,
-      
+     
     },
     dispatch
   );
-export default connect(mapStateToProps, mapDispatchToProps)(UsuarioForm);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UsuarioForm);
