@@ -1,5 +1,4 @@
 import React from 'react'
-import user from 'admin-lte/dist/img/user2-160x160.jpg'
 import MenuTree from './menutree'
 import MenuItem from './menuitem'
 

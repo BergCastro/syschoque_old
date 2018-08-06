@@ -19,7 +19,6 @@ function formatNumero(number) {
 }
 
 
-
 function formatDate(date) {
     const data = new Date(date)
     const options = {
@@ -128,7 +127,7 @@ export function docDefinition(oficio) {
             fontSize: 12
         },
         { 
-            text: formatHtml2Array(oficio.conteudo), 
+            text: html2Text(oficio.conteudo), 
             margin: [10,25,0,0],
             fontSize: 12
             

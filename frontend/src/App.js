@@ -12,7 +12,7 @@ import Footer from './common/template/footer'
 import Messages from './common/msg/messages'
 import IF from './common/operator/if'
 import Auth from './auth/auth'
-//import $ from 'jquery'
+import $ from 'jquery'
 
 
 class App extends Component {
@@ -33,15 +33,15 @@ class App extends Component {
     const contentWrapper = document.querySelector('.content-wrapper')
     body.className = 'skin-blue sidebar-mini'
     //boby.style= 'height: auto; min-height: 100%;'
-    const $ = window.$
+    //const $ = window.jQuery
    
     const heightScreen = $(document).height()-101+'px'
-    console.log(heightScreen)
+    
     contentWrapper.style.minHeight = heightScreen
     
-    $(document).ready(function () {
+   
       $('.sidebar-menu').tree()
-    })
+    
   }
   render() {
    // const { handleClick } = this.props
