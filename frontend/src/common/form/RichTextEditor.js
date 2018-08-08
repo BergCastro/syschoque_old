@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ReactSummernote from 'react-summernote';
-import 'react-summernote/dist/react-summernote.css'; // import styles
-import 'react-summernote/lang/summernote-pt-BR'; // you can import any other locale
+import ReactSummernote from './Summernote';
+import 'summernote/dist/summernote.css'; // import styles
+import 'summernote/lang/summernote-pt-BR'; // you can import any other locale
 
 // Import bootstrap(v3 or v4) dependencies
 import 'admin-lte/bower_components/bootstrap/js/modal';
@@ -14,9 +14,7 @@ require('bootstrap');
 
 
 class RichTextEditor extends Component {
-  onChange(content) {
-    console.log('onChange', content);
-  }
+ 
 
   render() {
     const { onChange, value } =this.props
@@ -34,7 +32,7 @@ class RichTextEditor extends Component {
             ['para', ['ul', 'ol', 'paragraph']],
             ['table', ['table']],
             ['insert', ['picture']],
-            ['view', ['fullscreen', 'codeview']]
+            
           ]
         }}
         onChange={onChange}
