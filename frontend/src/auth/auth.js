@@ -14,7 +14,7 @@ class Auth extends Component {
   };
 
   handleEmailChange = event => {
-    console.log("email: " + event.target.value);
+    
     this.setState({ email: event.target.value });
   };
 

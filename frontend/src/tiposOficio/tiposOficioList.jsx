@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { getList, showUpdate, showDelete } from './tiposOficioActions'
+import sortBy from 'sort-by'
+import ReactTable from "react-table"
+import "react-table/react-table.css"
+import matchSorter from 'match-sorter'
 
 class TiposOficioList extends Component {
 
@@ -9,45 +13,79 @@ class TiposOficioList extends Component {
         this.props.getList()
     }
 
-    formatDate(date){
+    formatDate(date) {
         const data = new Date(date)
-       
-        return data.toLocaleDateString()
+        const options = {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric'
+        }
+
+        return data.toLocaleDateString('pt-BR', options)
     }
 
-    renderRows() {
-        const list = this.props.list || []
-        return list.map(tiposOficio => (
-            <tr key={tiposOficio._id}>
-                <td>{tiposOficio.nome}</td>
-                <td>
-                    <button className='btn btn-warning' onClick={() => this.props.showUpdate(tiposOficio)}>
-                        <i className='fa fa-pencil'></i>
-                    </button>
-                    <button className='btn btn-danger' onClick={() => this.props.showDelete(tiposOficio)}>
-                        <i className='fa fa-trash-o'></i>
-                    </button>
-                </td>
-            </tr>
-        ))
-    }
+    
 
     render() {
+        const list = this.props.list || []
+        const listByNome = list.sort(sortBy('nome'))
         return (
             <div>
-                <table className='table'>
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
+                <div>
+                    <ReactTable
+                        data={listByNome}
+                        filterable
+                        columns={[
+
+                            {
+                                Header: "Nome",
+                                id: "nome",
+                                accessor: d => d.nome,
+                                filterMethod: (filter, rows) =>
+                                    matchSorter(rows, filter.value, { keys: ["nome"] }),
+                                filterAll: true
+                               
+                            },
+                           
+                            {
+                                Header: "Ações",
+                                id: 'acoes',
+                                accessor: d => (
+                                    <div>                                    
+                                    <button className='btn btn-warning' onClick={() => this.props.showUpdate(d)}>
+                                        <i className='fa fa-pencil'></i>
+                                    </button>
+                                    <button className='btn btn-danger'  onClick={() => this.props.showDelete(d)} >
+                                        <i className='fa fa-trash-o'></i>
+                                    </button>
+                                    </div>
+                                ),
+                                filterable: false,
+                                maxWidth: 100
+
+                            }
                             
-                            <th className='table-actions'>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.renderRows()}
-                    </tbody>
-                </table>
+                            
+
+                        ]}
+                        
+                        
+                        defaultPageSize={10}
+                        className="-striped -highlight"
+                        previousText={'Anterior'}
+                        nextText={'Próximo'}
+                        loadingText={'Carregando'}
+                        noDataText={'Nenhum resultado encontrado'}
+                        pageText={'Página'}
+                        ofText={'de'}
+                        rowsText={'linhas'}
+                    />
+                </div>
             </div>
+
         )
     }
 }

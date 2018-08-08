@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import IF from '../common/operator/if'
 
 import ContentHeader from '../common/template/contentHeader'
 import Content from '../common/template/content'
@@ -14,13 +15,21 @@ import { init, create, update, remove } from './tiposOficioActions'
 import List from './tiposOficioList'
 import Form from './tiposOficioForm'
 
-class TiposOficio extends Component {
 
+class TiposOficio extends Component {
+    updateList = (event) => {
+        event.preventDefault()
+       
+        this.props.init()
+    }
     componentWillMount() {
         this.props.init()
     }
 
+    
+
     render() {
+        
         return (
             <div>
                 <ContentHeader title="Tipos de Ofícios" small='Cadastro' />
@@ -31,6 +40,7 @@ class TiposOficio extends Component {
                             <TabHeader label='Incluir' icon='plus' target='tabCreate' />
                             <TabHeader label='Alterar' icon='pencil' target='tabUpdate' />
                             <TabHeader label='Excluir' icon='trash-o' target='tabDelete' />
+                           
                         </TabsHeader>
                         <TabsContent>
                             <TabContent id='tabList'>
@@ -48,6 +58,7 @@ class TiposOficio extends Component {
                                 <Form onSubmit={this.props.remove} readOnly={true}
                                     submitLabel='Excluir' submitClass='danger' />
                             </TabContent>
+                            
                         </TabsContent>
                     </Tabs>
                 </Content>
@@ -55,6 +66,8 @@ class TiposOficio extends Component {
         )
     }
 }
+
+
 
 const mapDispatchToProps = dispatch => bindActionCreators({
     init, create, update, remove

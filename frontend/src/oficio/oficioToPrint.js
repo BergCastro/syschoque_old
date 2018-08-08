@@ -4,7 +4,7 @@ import { bindActionCreators } from "redux";
 import ReactToPrint from "react-to-print";
 import { init } from "./oficioActions";
 import "./oficioToPrint.css";
-import logo from "./logo-sspds.png";
+import logo from "../images/logo-sspds.png";
 
 function formatNumero(number) {
   const length = number.length;

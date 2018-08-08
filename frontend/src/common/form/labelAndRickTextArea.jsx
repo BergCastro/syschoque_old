@@ -1,6 +1,6 @@
 import React from 'react'
 import Grid from '../layout/grid'
-import RichTextEditor from './RichTextEditor'
+import RichTextEditor from './richTextEditor/RichTextEditor'
 
 export default props => (
     <Grid cols={props.cols}>

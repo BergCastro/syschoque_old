@@ -19,9 +19,7 @@ import Form from './oficioForm'
 import Print from './oficioToPrint'
 
 class Oficio extends Component {
-    state = {
-        loading: false
-    }
+    
 
     updateList = (event) => {
         event.preventDefault()

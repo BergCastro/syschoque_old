@@ -9,17 +9,20 @@ const BASE_URL = Urls.API_URL
 const INITIAL_VALUES = {conteudo: ''}
 
 export const GET_COUNT_TIPOS = 'GET_COUNT_TIPOS'
-export const GET_TIPOS_OFICIO = 'GET_TIPOS_OFICIO'
+export const GET_TIPOS = 'GET_TIPOS'
+export const GET_TIPO_OFICIO = 'GET_TIPO_OFICIO'
 export const UPDATE_CONTEUDO_TIPO = 'UPDATE_CONTEUDO_TIPO'
 
 
 export function getList() {
     const request = axios.get(`${BASE_URL}/tiposOficio`)
     return {
-        type: GET_TIPOS_OFICIO,
+        type: GET_TIPOS,
         payload: request
     }
 }
+
+
 
 export function getCount() {
     const response = axios.get(`${BASE_URL}/tiposOficio/count`)
