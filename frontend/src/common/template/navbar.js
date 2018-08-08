@@ -18,15 +18,11 @@ class Navbar extends Component {
     }
   }
   render() {
-    const { handleClick, logout, user } = this.props
+    const { logout, user } = this.props
     return (
       <nav className="navbar navbar-static-top">
-        <a
-          href="#"
-          className="sidebar-toggle"
-          data-toggle="push-menu"
-          role="button"
-        >
+        <a href='' className="sidebar-toggle"
+          data-toggle="push-menu" role="button">
           <span className="sr-only">Toggle navigation</span>
           <span className="icon-bar" />
           <span className="icon-bar" />
@@ -36,13 +32,13 @@ class Navbar extends Component {
         <div className="navbar-custom-menu">
           <ul className="nav navbar-nav">
             <li className="dropdown user user-menu">
-              <a href="#" className="dropdown-toggle" data-toggle="dropdown">
-                <img src={userPhoto} className="user-image" />
+              <a href='' className="dropdown-toggle" data-toggle="dropdown">
+                <img src={userPhoto} className="user-image" alt='user' />
                 <span className="hidden-xs">{user.nomeGuerra}</span>
               </a>
               <ul className="dropdown-menu">
                 <li className="user-header">
-                  <img src={userPhoto} className="img-circle" />
+                  <img src={userPhoto} className="img-circle" alt='user'/>
 
                   <p>
                     {user.nomeGuerra}

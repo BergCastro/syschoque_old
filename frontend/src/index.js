@@ -6,10 +6,9 @@ import multi from "redux-multi";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import reducers from "./reducers";
-import App from './App'
 import AuthOrApp from './authOrApp'
 import registerServiceWorker from "./registerServiceWorker";
-import AuthExample from './AuthExample'
+
 
 
 const devTools =

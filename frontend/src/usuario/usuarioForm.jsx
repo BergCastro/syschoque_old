@@ -1,26 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { reduxForm, Field, formValueSelector } from "redux-form";
-import { createNumberMask, createTextMask } from "redux-form-input-masks";
+import { reduxForm, Field } from "redux-form";
+import { createTextMask } from "redux-form-input-masks";
 import { cargoList } from "../consts";
 import { init } from "./usuarioActions";
 import LabelAndInput from "../common/form/labelAndInput";
 import LabelAndSelect from "../common/form/labelAndSelect";
 
-const currencyMask = createNumberMask({
-  prefix: "US$ ",
-  suffix: " per item",
-  decimalPlaces: 2,
-  locale: "en-US"
-});
+
 const matriculaMask = createTextMask({
   pattern: "999.999-9-9"
 });
 
-const pinMask = createTextMask({
-  pattern: "9999"
-});
+
 
 class UsuarioForm extends Component {
 
@@ -154,7 +147,7 @@ UsuarioForm = reduxForm({ form: "usuarioForm", destroyOnUnmount: false })(
   UsuarioForm
 );
 
-const selector = formValueSelector("usuarioForm");
+
 const mapStateToProps = state => ({
   
 });

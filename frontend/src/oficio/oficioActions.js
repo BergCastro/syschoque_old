@@ -21,6 +21,7 @@ const INITIAL_VALUES = {
 }
 
 export const GET_OFICIOS = 'GET_OFICIOS'
+export const GET_OFICIO = 'GET_OFICIO'
 export const GET_TIPOS_OFICIO = 'GET_TIPOS_OFICIO'
 export const GET_COUNT_OFICIO = 'GET_COUNT_OFICIO'
 export const UPDATE_CONTEUDO = 'UPDATE_CONTEUDO'
@@ -36,6 +37,14 @@ export function getList() {
     return {
         type: GET_OFICIOS,
         payload: request
+    }
+}
+
+export function getOficio(oficio) {
+     
+    return {
+        type: GET_OFICIO,
+        payload: oficio
     }
 }
 
@@ -112,7 +121,7 @@ export function updateStatusAtual(value, user) {
 
 
 export function create(values) {
-    //console.log('values: ' + JSON.stringify(values))
+    
     const valor = {
         ...values,
         statusAtual: 'Aberto',
@@ -166,6 +175,17 @@ export function showUpdate(oficio) {
         initialize('oficioForm', oficio)
     ]
 }
+
+export function showPrint(oficio) {
+    
+    return [
+        showTabs('tabPrint'),
+        selectTab('tabPrint'),
+        getOficio(oficio)
+    ]
+}
+
+
 
 export function showDelete(oficio) {
 

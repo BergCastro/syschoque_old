@@ -12,6 +12,7 @@ import $ from 'jquery';
 window.jQuery = $;
 require('bootstrap');
 
+
 class RichTextEditor extends Component {
   onChange(content) {
     console.log('onChange', content);
@@ -27,9 +28,9 @@ class RichTextEditor extends Component {
           height: 250,
           dialogsInBody: true,
           toolbar: [
-           // ['style', ['style']],
-           // ['font', ['bold', 'underline', 'clear']],
-           // ['fontname', ['fontname']],
+            ['font', ['bold', 'italic', 'underline', 'clear']],
+            ['fontname', ['fontname']],
+            ['fontsize', ['fontsize']],
             ['para', ['ul', 'ol', 'paragraph']],
             ['table', ['table']],
             ['insert', ['picture']],

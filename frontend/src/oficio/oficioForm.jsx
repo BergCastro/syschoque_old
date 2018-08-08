@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { reduxForm, Field, formValueSelector } from "redux-form";
-import { docDefinition } from "./oficioPdfConfig";
-import pdfMake from "pdfmake/build/pdfmake.js";
-import pdfFonts from "pdfmake/build/vfs_fonts";
 import {
   init,
   updateConteudo,
@@ -22,17 +19,18 @@ import LabelAndSelect from "../common/form/labelAndSelect";
 import ListStatus from "./oficioStatusList";
 import { createTextMask } from "redux-form-input-masks";
 
+
+
 const dataMask = createTextMask({
   pattern: "99/99/9999"
 });
 
 class OficioForm extends Component {
-  prioridades = ["OBRIGATÓRIA", "PARCIAL", "DE ACORDO COM A DEMANDA"];
-
+  
   statusList = ["Aberto", "Em transito", "Arquivado", "Cancelado"];
 
   componentDidMount() {
-    const { conteudo, user, updateUser } = this.props;
+    const { user, updateUser } = this.props;
 
     updateUser(user.cargo + " " + user.nomeGuerra);
   }
@@ -57,7 +55,7 @@ class OficioForm extends Component {
 
   onChangeConteudo = value => {
     this.props.updateConteudo(value);
-    console.log("conteudo: " + value);
+    
   };
 
   formatNumero(number) {
@@ -74,23 +72,6 @@ class OficioForm extends Component {
     }
   }
 
-  /*handlePdfDownload = () => {
-        pdfMake.vfs = pdfFonts.pdfMake.vfs
-        pdfMake.createPdf(docDefinition()).download('ope.pdf')
-
-    }
-
-    handlePdfPrint = () => {
-        pdfMake.vfs = pdfFonts.pdfMake.vfs
-        pdfMake.createPdf(docDefinition()).print()
-    }
-  */
-
-  handlePdfOpen = () => {
-    const { oficio } = this.props;
-    pdfMake.vfs = pdfFonts.pdfMake.vfs;
-    pdfMake.createPdf(docDefinition(oficio)).open();
-  };
 
   render() {
     const {
@@ -98,16 +79,13 @@ class OficioForm extends Component {
       readOnly,
       tiposOficios,
       status,
-      user,
       statusAtual,
       numero,
       oficio,
-      updateConteudo
     } = this.props;
     const tiposNomes = tiposOficios.map(tipo => tipo.nome);
     const statusOficio = status || [];
     const statusUltilizados = statusOficio.map(stat => stat.status) || [];
-    console.log("oficio: " + oficio);
     const statusDisponiveis = this.statusList.filter(function(item) {
       return !statusUltilizados.includes(item);
     });
@@ -197,6 +175,7 @@ class OficioForm extends Component {
           />
 
           <ListStatus list={statusOficio} />
+          
         </div>
         <div className="box-footer">
           <button type="submit" className={`btn btn-${this.props.submitClass}`}>
@@ -209,13 +188,7 @@ class OficioForm extends Component {
           >
             Cancelar
           </button>
-          <button
-            type="button"
-            className="btn btn-default"
-            onClick={this.handlePdfOpen}
-          >
-            Imprimir
-          </button>
+          
         </div>
       </form>
     );

@@ -16,6 +16,7 @@ import { init, create, update, remove } from './oficioActions'
 
 import List from './oficioList'
 import Form from './oficioForm'
+import Print from './oficioToPrint'
 
 class Oficio extends Component {
     state = {
@@ -52,6 +53,7 @@ class Oficio extends Component {
                             <TabHeader label='Incluir' icon='plus' target='tabCreate' />
                             <TabHeader label='Alterar' icon='pencil' target='tabUpdate' />
                             <TabHeader label='Excluir' icon='trash-o' target='tabDelete' />
+                            <TabHeader label='Imprimir' icon='print' target='tabPrint' />
                             <IF test={tabSelected === 'tabList'}>
                             <button type="button"
                                     className="btn btn-link" 
@@ -80,6 +82,9 @@ class Oficio extends Component {
                                 <Form onSubmit={this.props.remove} readOnly={true}
                                     submitLabel='Excluir' submitClass='danger' />
                             </TabContent>
+                            <TabContent id='tabPrint'>
+                                <Print  />
+                            </TabContent>
                         </TabsContent>
                     </Tabs>
                 </Content>
@@ -88,7 +93,8 @@ class Oficio extends Component {
     }
 }
 const mapStateToProps = state => ({
-     tabSelected: state.tab.selected
+     tabSelected: state.tab.selected,
+     oficio: state.oficio.oficioAtual
 })
 const mapDispatchToProps = dispatch => bindActionCreators({
     init, create, update, remove,

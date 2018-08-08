@@ -3,15 +3,14 @@ import "./common/template/includes/dependencies";
 
 //import './common/template/includes/admin-lte'
 import React, { Component } from 'react';
-import { BrowserRouter, HashRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import Routes from './routes'
 
 import Header from './common/template/header'
 import SideBar from './common/template/sidebar'
 import Footer from './common/template/footer'
 import Messages from './common/msg/messages'
-import IF from './common/operator/if'
-import Auth from './auth/auth'
+
 import $ from 'jquery'
 
 

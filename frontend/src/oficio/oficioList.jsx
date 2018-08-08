@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { getList, showUpdate, showDelete } from './oficioActions'
+import { getList, showUpdate, showDelete, showPrint } from './oficioActions'
 import sortBy from 'sort-by'
 import ReactTable from "react-table"
 import "react-table/react-table.css"
 import matchSorter from 'match-sorter'
+
 
 class OficioList extends Component {
 
@@ -56,31 +57,6 @@ class OficioList extends Component {
         rowsText: 'rows',
     }
 
-    renderRows() {
-        const list = this.props.list || []
-        const listByNumero = list.sort(sortBy('-numero'))
-        return listByNumero.map(oficio => (
-
-            <tr key={oficio._id} style={oficio.statusAtual === 'Cancelado' ? this.styleFontRed : { color: 'black' }}>
-                <td>{this.formatNumero(oficio.numero + "")}</td>
-                <td>{this.formatDate(oficio.data)}</td>
-                <td>{oficio.assunto}</td>
-                <td>{oficio.destino}</td>
-                <td>{oficio.statusAtual}</td>
-                <td>
-                    <button className='btn btn-success' onClick={() => this.props.showUpdate(oficio)}>
-                        <i className='glyphicon glyphicon-search'></i>
-                    </button>
-                    <button className='btn btn-warning' onClick={() => this.props.showUpdate(oficio)}>
-                        <i className='fa fa-pencil'></i>
-                    </button>
-                    {/*<button className='btn btn-danger' onClick={() => this.props.showDelete(oficio)}>
-                        <i className='fa fa-trash-o'></i> 
-        </button>*/}
-                </td>
-            </tr>
-        ))
-    }
 
     render() {
         const list = this.props.list || []
@@ -143,8 +119,8 @@ class OficioList extends Component {
                                 id: 'acoes',
                                 accessor: d => (
                                     <div>
-                                    <button className='btn btn-success' onClick={() => this.props.showUpdate(d)}>
-                                        <i className='glyphicon glyphicon-search'></i>
+                                    <button className='btn btn-success'  onClick={() => this.props.showPrint(d)} >
+                                        <i className='fa fa-print'></i>
                                     </button>
                                     <button className='btn btn-warning' onClick={() => this.props.showUpdate(d)}>
                                         <i className='fa fa-pencil'></i>
@@ -179,5 +155,5 @@ class OficioList extends Component {
 }
 
 const mapStateToProps = state => ({ list: state.oficio.list })
-const mapDispatchToProps = dispatch => bindActionCreators({ getList, showUpdate, showDelete }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ getList, showUpdate, showDelete, showPrint }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(OficioList)
