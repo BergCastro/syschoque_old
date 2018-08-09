@@ -168,6 +168,7 @@ export default formReducer.plugin({
           ...state,
           values: {
             ...state.values,
+            assunto: action.payload.assunto,
             referencia: action.payload.referencia,
             anexo: action.payload.anexo,
             destino: action.payload.destino,

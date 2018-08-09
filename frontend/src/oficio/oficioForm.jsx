@@ -101,31 +101,22 @@ class OficioForm extends Component {
             component={LabelAndLabel}
             readOnly={readOnly}
             label="Número"
-            cols="12 2"
+            cols="12 3"
             valor={this.formatNumero(numero + "")}
           />
 
+          
           <Field
-            name="dataMissao"
-            component={LabelAndInput}
-            readOnly={readOnly}
-            label="Data da Missão"
-            cols="12 3"
-            placeholder="Informe a data da missão"
-            {...dataMask}
-          />
-
-          <Field
-            name="assunto"
+            name="tipo"
             component={LabelAndSelect}
             readOnly={readOnly}
             label="Tipo"
-            cols="12 4"
+            cols="12 6"
             placeholder="Selecione um tipo!"
             itens={tiposNomes}
             onChange={this.updateTipo}
           />
-
+         
           <Field
             name="statusAtual"
             component={LabelAndSelect}
@@ -136,6 +127,15 @@ class OficioForm extends Component {
             itens={statusCombo}
             onChange={this.updateStatus}
             disabled={statusOficio.length === 0 ? true : false}
+          />
+
+          <Field
+            name="assunto"
+            component={LabelAndInput}
+            readOnly={readOnly}
+            label="Assunto"
+            cols="12"
+            placeholder="Informe um assunto"
           />
 
           <Field

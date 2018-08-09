@@ -15,6 +15,7 @@ const oficiosStatus = new Schema({
 
 const oficiosSchema = new Schema({
     numero: { type: Number },
+    tipo: String,
     assunto: String,
     referencia: String,
     anexo: String,

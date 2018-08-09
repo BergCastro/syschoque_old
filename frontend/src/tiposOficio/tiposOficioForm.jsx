@@ -8,9 +8,13 @@ import LabelAndTextArea from "../common/form/labelAndTextArea";
 import LabelAndRickTextArea from "../common/form/labelAndRickTextArea";
 
 class TiposOficioForm extends Component {
-  updateConteudo = value => {
+
+
+  onChangeConteudo = value => {
     this.props.updateConteudo(value);
+    
   };
+
 
   render() {
     const { handleSubmit, readOnly, conteudo } = this.props;
@@ -25,6 +29,15 @@ class TiposOficioForm extends Component {
             label="Nome"
             cols="12"
             placeholder="Informe um nome"
+          />
+
+          <Field
+            name="assunto"
+            component={LabelAndInput}
+            readOnly={readOnly}
+            label="Assunto"
+            cols="12"
+            placeholder="Informe um assunto"
           />
 
           <Field

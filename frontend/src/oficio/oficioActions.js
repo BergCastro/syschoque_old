@@ -13,7 +13,6 @@ const INITIAL_VALUES = {
     assunto: '',
     referencia: '',
     destino: '',
-    local: '',
     anexo: '',
     user: '',
     dataMissao: '',

@@ -91,10 +91,10 @@ class OficioList extends Component {
 
                             {
                                 Header: "Tipo",
-                                id: "assunto",
-                                accessor: d => d.assunto,
+                                id: "tipo",
+                                accessor: d => d.tipo,
                                 filterMethod: (filter, rows) =>
-                                    matchSorter(rows, filter.value, { keys: ["assunto"] }),
+                                    matchSorter(rows, filter.value, { keys: ["tipo"] }),
                                 filterAll: true
                             },
                             {

@@ -5,6 +5,7 @@ const Schema = mongoose.Schema
 
 const tiposOficioSchema = new Schema({
     nome: String,
+    assunto: String,
     referencia: String,
     anexo: String,
     destino: String,
