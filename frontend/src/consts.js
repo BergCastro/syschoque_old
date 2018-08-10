@@ -19,15 +19,16 @@ export const cargoList = [
 ];
 
 export const situacaoFuncionalList = [
-  "A disposição",
-  "Férias",
+  "EM ATIVIDADE",
+  "A DISPOSIÇÃO",
+  "FÉRIAS",
   "LTS",
-  "Luto",
-  "Núpcias",
-  "Serviços Leves"
+  "LUTO",
+  "NÚPCIAS",
+  "SERVIÇOS LEVES"
 ];
 
-export const sexo = [
+export const sexos = [
   { nome: "Masculino", abreviacao: "M" },
   { nome: "Feminino", abreviacao: "F" }
 ];
@@ -101,3 +102,11 @@ export const categoriasCnh = [
   'AE'
 ]
 
+export const comportamentos = [
+  'BOM',
+  'EXCELENTE',
+  'MAU',
+  'OTIMO',
+  'REGULAR'
+
+]

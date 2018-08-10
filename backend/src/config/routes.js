@@ -29,6 +29,9 @@ module.exports = function (server) {
     const Usuarios = require('../api/user/userService')
     Usuarios.register(protectedApi, '/usuarios')
 
+    const Efetivo = require('../api/efetivo/efetivo')
+    Efetivo.register(protectedApi, '/efetivo')
+
   
     /*
      * Rotas abertas

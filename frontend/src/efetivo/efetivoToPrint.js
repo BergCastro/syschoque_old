@@ -2,8 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import ReactToPrint from "react-to-print";
-import { init } from "./oficioActions";
-import "./oficioToPrint.css";
+import { init } from "./efetivoActions";
+import "./efetivoToPrint.css";
 import logo from "../images/logo-sspds.png";
 import IF from '../common/operator/if'
 
@@ -21,34 +21,23 @@ function formatNumero(number) {
   }
 }
 
-class OficioContent extends React.Component {
+class EfetivoContent extends React.Component {
   componentDidMount() {
     const divConteudo = document.querySelector(".conteudo");
-    divConteudo.innerHTML = this.props.oficio.conteudo;
+    divConteudo.innerHTML = this.props.Efetivo.conteudo;
   }
   render() {
-    const { oficio } = this.props;
+    const { efetivo } = this.props;
 
     return (
       <div className="body-report">
         <img className="logo" src={logo} alt="logo sspds" />
         <p>
           <strong>
-            Oficio Nº: {formatNumero(oficio.numero + "")} - Ajd. Sec.
+            Oficio Nº: } - Ajd. Sec.
             CBPChoque/CPE
           </strong>
-          <IF test={oficio.assunto !== ''}>
-          <br />
-          <strong>Assunto: </strong>{oficio.assunto}
-          </IF>
-          <IF test={oficio.referencia !== ''}>
-          <br />
-          <strong>Ref./Determinação: </strong>{oficio.referencia}
-          </IF>
-          <IF test={oficio.anexo !== ''}>
-          <br />
-          <strong>Anexo: </strong>{oficio.anexo}
-          </IF>
+          
             
           
 
@@ -78,9 +67,9 @@ class OficioContent extends React.Component {
   }
 }
 
-class OficioToPrint extends React.Component {
+class EfetivoToPrint extends React.Component {
   render() {
-    const { oficio } = this.props;
+    const { efetivo } = this.props;
     return (
       <div className="box-body">
         <div className="btn-group">
@@ -96,13 +85,13 @@ class OficioToPrint extends React.Component {
             <i className="fa fa-arrow-left fa-lg" aria-hidden="true" /> Voltar
           </button>
         </div>
-        <OficioContent oficio={oficio} ref={el => (this.componentRef = el)} />
+        <EfetivoContent efetivo={efetivo} ref={el => (this.componentRef = el)} />
       </div>
     );
   }
 }
 const mapStateToProps = state => ({
-  oficio: state.oficio.oficioAtual
+  efetivo: state.efetivo.efetivoAtual
 });
 
 const mapDispatchToProps = dispatch =>
@@ -116,4 +105,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(OficioToPrint);
+)(EfetivoToPrint);

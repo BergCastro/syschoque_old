@@ -4,6 +4,7 @@ import DashboardReducer from './dashboard/dashboardReducer'
 import TabReducer from './common/tab/tabReducer'
 import OficioReducer from './oficio/oficioReducer'
 import TiposOficioReducer from './tiposOficio/tiposOficioReducer'
+import EfetivoReducer from './efetivo/efetivoReducer'
 import UsuarioReducer from './usuario/usuarioReducer'
 import ReducersForms from './reducersForms'
 import AuthReducer from './auth/authReducer'
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
     tab: TabReducer,
     oficio: OficioReducer,
     tiposOficio: TiposOficioReducer,
+    efetivo: EfetivoReducer,
     form: ReducersForms,
     toastr: toastrReducer,
     auth: AuthReducer,

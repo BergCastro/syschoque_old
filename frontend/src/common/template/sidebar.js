@@ -20,6 +20,7 @@ export default props => (
         <MenuTree name='P1' icon='edit'>
           <MenuItem path='/oficios' name='Ofícios' icon='circle-o' />
           <MenuItem path='/tiposOficio' name='Tipos de Ofício' icon='circle-o' />
+          <MenuItem path='/efetivo' name='Efetivo' icon='circle-o' />
         </MenuTree>
         <MenuTree name='P3' icon='edit'>
           <MenuItem path='/oficios' name="OPE's" icon='circle-o' />
