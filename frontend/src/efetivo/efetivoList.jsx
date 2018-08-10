@@ -70,47 +70,48 @@ class EfetivoList extends Component {
                         columns={[
 
                             {
-                                Header: "Número",
-                                id: "numero",
-                                accessor: d => this.formatNumero(d.numero + ''),
+                                Header: "Matrícula",
+                                id: "matricula",
+                                accessor: d => d.matricula,
                                 filterMethod: (filter, rows) =>
-                                    matchSorter(rows, filter.value, { keys: ["numero"] }),
+                                    matchSorter(rows, filter.value, { keys: ["matricula"] }),
                                 filterAll: true,
                                 maxWidth: 80
                             },
                             {
-                                Header: "Data Ofício",
-                                id: "data",
-                                accessor: d => this.formatDate(d.data),
+                                Header: "Número",
+                                id: "numero",
+                                accessor: d => d.numero,
                                 filterMethod: (filter, rows) =>
-                                    matchSorter(rows, filter.value, { keys: ["data"] }),
+                                    matchSorter(rows, filter.value, { keys: ["numero"] }),
                                 filterAll: true,
                                 maxWidth: 130
 
                             },
 
                             {
-                                Header: "Tipo",
-                                id: "tipo",
-                                accessor: d => d.tipo,
+                                Header: "Posto/Grad.",
+                                id: "cargo",
+                                accessor: d => d.cargo,
                                 filterMethod: (filter, rows) =>
-                                    matchSorter(rows, filter.value, { keys: ["tipo"] }),
+                                    matchSorter(rows, filter.value, { keys: ["cargo"] }),
+                                filterAll: true,
+                                maxWidth: 130
+                            },
+                            {
+                                Header: "Nome",
+                                id: "nome",
+                                accessor: d => d.nome,
+                                filterMethod: (filter, rows) =>
+                                    matchSorter(rows, filter.value, { keys: ["nome"] }),
                                 filterAll: true
                             },
                             {
-                                Header: "Destino",
-                                id: "destino",
-                                accessor: d => d.destino,
+                                Header: "Unidade Policial",
+                                id: 'unidadePolicial',
+                                accessor: s => s.unidadePolicial,
                                 filterMethod: (filter, rows) =>
-                                    matchSorter(rows, filter.value, { keys: ["destino"] }),
-                                filterAll: true
-                            },
-                            {
-                                Header: "Status Atual",
-                                id: 'statusAtual',
-                                accessor: s => s.statusAtual,
-                                filterMethod: (filter, rows) =>
-                                    matchSorter(rows, filter.value, { keys: ["statusAtual"] }),
+                                    matchSorter(rows, filter.value, { keys: ["unidadePolicial"] }),
                                 filterAll: true,
                                 maxWidth: 130
                             },

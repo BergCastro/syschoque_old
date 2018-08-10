@@ -13,12 +13,9 @@ import TabContent from "../common/tab/tabContent";
 import { init, create, update, remove } from "./efetivoActions";
 
 import List from "./efetivoList";
-import Form from "./efetivoForm";
-import DadosForm from './efetivoDadosForm'
+import Form from "./efetivoForms/efetivoFormsIncluir";
 import Print from "./efetivoToPrint";
-import TabHeaderIncluir from "./tabHeaderIncluir";
-import TabsContentIncluir from "./tabsContentIncluir";
-import TabContentIncluir from "./tabContentIncluir";
+
 
 class Efetivo extends Component {
   updateList = event => {
@@ -38,7 +35,7 @@ class Efetivo extends Component {
     const { tabSelected } = this.props;
     return (
       <div>
-        <ContentHeader title="Efetivos" small="Cadastro" />
+        <ContentHeader title="Efetivo" small="Cadastro" />
         <Content>
           <Tabs>
             <TabsHeader>
@@ -64,50 +61,11 @@ class Efetivo extends Component {
               </TabContent>
               <TabContent id="tabCreate">
                 <div>
-                  <TabHeaderIncluir />
-                  <TabsContentIncluir>
-                    <TabContentIncluir classAtive="in active" id="dados">
-                      <DadosForm
-                        onSubmit={this.props.create}
-                        submitLabel="Incluir"
-                        submitClass="primary"
-                      />
-                    </TabContentIncluir>
-                    <TabContentIncluir id="documentos">
-                      <Form
-                        onSubmit={this.props.create}
-                        submitLabel="Incluir"
-                        submitClass="primary"
-                      />
-                    </TabContentIncluir>
-                    <TabContentIncluir id="ferias">
-                      <Form
-                        onSubmit={this.props.create}
-                        submitLabel="Incluir"
-                        submitClass="primary"
-                      />
-                    </TabContentIncluir> 
-                    <TabContentIncluir id="recompensas">
-                      <Form
-                        onSubmit={this.props.create}
-                        submitLabel="Incluir"
-                        submitClass="primary"
-                      />
-                    </TabContentIncluir>   
-                    <TabContentIncluir id="cursos">
-                      <Form
-                        onSubmit={this.props.create}
-                        submitLabel="Incluir"
-                        submitClass="primary"
-                      />
-                    </TabContentIncluir>
-                    <TabContentIncluir id="promocoes">
-                      Promoções
-                    </TabContentIncluir>  
-                    <TabContentIncluir id="sancoes">
-                     Sanções
-                    </TabContentIncluir>         
-                  </TabsContentIncluir>
+                  <Form
+                    onSubmit={this.props.create}
+                    submitLabel="Incluir"
+                    submitClass="primary"
+                  />
                 </div>
               </TabContent>
               <TabContent id="tabUpdate">

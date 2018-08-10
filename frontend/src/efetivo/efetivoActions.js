@@ -25,7 +25,7 @@ const INITIAL_VALUES = {
     estadoCivil: '',
     naturalidade: '',
     nacionalidade: '',
-    uniforme: [],
+    uniforme: {},
     fichaMilitar: {},
     dataIngresso: '',
     documentoIngresso: '',
@@ -67,11 +67,11 @@ export function getList() {
     }
 }
 
-export function getEfetivo(efetivo) {
+export function getPM(pm) {
      
     return {
-        type: GET_EFETIVO,
-        payload: efetivo
+        type: GET_PM,
+        payload: pm
     }
 }
 
@@ -142,19 +142,9 @@ export function updateStatusAtual(value, user) {
 
 
 export function create(values) {
-    
-    const valor = {
-        ...values,
-        statusAtual: 'Aberto',
-        status: [
-            {
-                status: "Aberto",
-                dataHora: Date.now(),
-                responsavel: values.user
-            }
-        ]
-    }
-    return submit(valor, 'post')
+    console.log(values)
+   
+    return submit(values, 'post')
 }
 
 
@@ -197,12 +187,12 @@ export function showUpdate(efetivo) {
     ]
 }
 
-export function showPrint(efetivo) {
+export function showPrint(pm) {
     
     return [
         showTabs('tabPrint'),
         selectTab('tabPrint'),
-        getEfetivo(efetivo)
+        getPM(pm)
     ]
 }
 
