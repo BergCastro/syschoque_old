@@ -17,6 +17,8 @@ const myCustomMaskDefinitions = {
   }
 };
 
+
+
 const dataMask = createTextMask({
   pattern: "99/99/9999"
 });
@@ -46,15 +48,97 @@ class EfetivoDadosForm extends Component {
           cols="12 3"
           {...cpfMask}
         />
+        <Field
+          name="tituloEleitoral"
+          component={LabelAndInput}
+          readOnly={readOnly}
+          label="Título Eleitoral n°:"
+          cols="12 3"
+         
+        />      
+        <Field
+          name="tituloEleitoralZona"
+          component={LabelAndInput}
+          readOnly={readOnly}
+          label="Título Eleitoral Zona:"
+          cols="12 3"
+         
+        />      
+        <Field
+          name="tituloEleitoralSecao"
+          component={LabelAndInput}
+          readOnly={readOnly}
+          label="Título Eleitoral Seção:"
+          cols="12 3"
+         
+        />      
 
         <Field
           name="reservista"
           component={LabelAndInput}
           readOnly={readOnly}
-          label="Reservista:"
+          label="Reservista n°:"
           cols="12 3"
          
         />        
+        <Field
+          name="reservistaOrgaoExp"
+          component={LabelAndInput}
+          readOnly={readOnly}
+          label="Reservista Orgão:"
+          cols="12 3"
+         
+        />  
+        <Field
+          name="reservistaSerie"
+          component={LabelAndInput}
+          readOnly={readOnly}
+          label="Reservista Série:"
+          cols="12 3"
+         
+        />             
+
+        <Field
+          name="reservistaTipo"
+          component={LabelAndInput}
+          readOnly={readOnly}
+          label="Reservista Tipo:"
+          cols="12 3"
+         
+        />       
+        <Field
+          name="pisPasepNis"
+          component={LabelAndInput}
+          readOnly={readOnly}
+          label="PIS/PASEP/NIS:"
+          cols="12 3"
+         
+        />       
+        <Field
+          name="cnh"
+          component={LabelAndInput}
+          readOnly={readOnly}
+          label="CNH n°:"
+          cols="12 3"
+         
+        />       
+        <Field
+          name="cnhCategoria"
+          component={LabelAndInput}
+          readOnly={readOnly}
+          label="CNH Categoria:"
+          cols="12 3"
+         
+        />   
+        <Field
+          name="cnhValidade"
+          component={LabelAndInput}
+          readOnly={readOnly}
+          label="CNH Validade:"
+          cols="12 3"
+          {...dataMask}
+         
+        />           
       </div>
     );
   }

@@ -126,10 +126,13 @@ class EfetivoList extends Component {
                                     <button className='btn btn-warning' onClick={() => this.props.showUpdate(d)}>
                                         <i className='fa fa-pencil'></i>
                                     </button>
+                                    <button className='btn btn-danger'  onClick={() => this.props.showDelete(d)} >
+                                        <i className='fa fa-trash-o'></i>
+                                    </button>
                                     </div>
                                 ),
                                 filterable: false,
-                                maxWidth: 100
+                                maxWidth: 130
 
                             }
                             

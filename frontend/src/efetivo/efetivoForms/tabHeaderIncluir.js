@@ -9,6 +9,11 @@ export default props => {
         </a>
       </li>
       <li role="presentation">
+        <a href="#enderecoContato" aria-controls="home" role="tab" data-toggle="tab">
+          <i className="fa fa-pencil" /> Endereço/Contato
+        </a>
+      </li>
+      <li role="presentation">
         <a
           href="#documentos"
           aria-controls="profile"
