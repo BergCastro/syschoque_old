@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import IF from '../common/operator/if'
@@ -31,7 +31,7 @@ class TiposOficio extends Component {
     render() {
         
         return (
-            <div>
+            <Fragment>
                 <ContentHeader title="Tipos de Ofícios" small='Cadastro' />
                 <Content>
                     <Tabs>
@@ -62,7 +62,7 @@ class TiposOficio extends Component {
                         </TabsContent>
                     </Tabs>
                 </Content>
-            </div>
+            </Fragment>
         )
     }
 }

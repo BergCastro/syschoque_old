@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { getList, showUpdate, showDelete, showPrint } from './efetivoActions'
@@ -119,7 +119,7 @@ class EfetivoList extends Component {
                                 Header: "Ações",
                                 id: 'acoes',
                                 accessor: d => (
-                                    <div>
+                                   <Fragment>
                                     <button className='btn btn-success'  onClick={() => this.props.showPrint(d)} >
                                         <i className='fa fa-print'></i>
                                     </button>
@@ -129,7 +129,7 @@ class EfetivoList extends Component {
                                     <button className='btn btn-danger'  onClick={() => this.props.showDelete(d)} >
                                         <i className='fa fa-trash-o'></i>
                                     </button>
-                                    </div>
+                                   </Fragment>
                                 ),
                                 filterable: false,
                                 maxWidth: 130

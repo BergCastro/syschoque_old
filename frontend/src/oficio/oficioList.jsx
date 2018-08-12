@@ -62,8 +62,7 @@ class OficioList extends Component {
         const list = this.props.list || []
         const listByNumero = list.sort(sortBy('-numero'))
         return (
-            <div>
-                <div>
+           
                     <ReactTable
                         data={listByNumero}
                         filterable
@@ -147,8 +146,7 @@ class OficioList extends Component {
                         ofText={'de'}
                         rowsText={'linhas'}
                     />
-                </div>
-            </div>
+            
 
         )
     }

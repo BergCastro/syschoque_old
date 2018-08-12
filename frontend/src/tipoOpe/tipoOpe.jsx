@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
@@ -22,7 +22,7 @@ class TipoOpe extends Component {
 
     render() {
         return (
-            <div>
+            <Fragment>
                 <ContentHeader title="Tipo OPE" small='Cadastro' />
                 <Content>
                     <Tabs>
@@ -51,7 +51,7 @@ class TipoOpe extends Component {
                         </TabsContent>
                     </Tabs>
                 </Content>
-            </div>
+            </Fragment>
         )
     }
 }

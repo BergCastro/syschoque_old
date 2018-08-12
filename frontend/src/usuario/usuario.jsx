@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import IF from '../common/operator/if'
@@ -42,7 +42,7 @@ class Usuario extends Component {
     render() {
         const { tabSelected } = this.props
         return (
-            <div>
+            <Fragment>
                 <ContentHeader title='Usuarios' small='Cadastro' />
                 <Content>
                     <Tabs>
@@ -79,7 +79,7 @@ class Usuario extends Component {
                         </TabsContent>
                     </Tabs>
                 </Content>
-            </div>
+            </Fragment>
         )
     }
 }

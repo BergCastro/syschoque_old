@@ -34,7 +34,7 @@ class OficioStatusList extends Component {
 
     render() {
         return (
-            <div>
+            
                 <table className='table'>
                     <thead>
                         <tr>
@@ -48,7 +48,7 @@ class OficioStatusList extends Component {
                         {this.renderRows()}
                     </tbody>
                 </table>
-            </div>
+            
         )
     }
 }

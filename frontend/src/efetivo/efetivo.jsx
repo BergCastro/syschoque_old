@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import IF from "../common/operator/if";
@@ -34,7 +34,7 @@ class Efetivo extends Component {
   render() {
     const { tabSelected } = this.props;
     return (
-      <div>
+      <Fragment>
         <ContentHeader title="Efetivo" small="Cadastro" />
         <Content>
           <Tabs>
@@ -60,13 +60,13 @@ class Efetivo extends Component {
                 <List />
               </TabContent>
               <TabContent id="tabCreate">
-                <div>
+                
                   <Form
                     onSubmit={this.props.create}
                     submitLabel="Incluir"
                     submitClass="primary"
                   />
-                </div>
+                
               </TabContent>
               <TabContent id="tabUpdate">
                 <Form
@@ -89,7 +89,7 @@ class Efetivo extends Component {
             </TabsContent>
           </Tabs>
         </Content>
-      </div>
+      </Fragment>
     );
   }
 }
