@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
 import Content from "../common/template/content"
 import ContentHeader from "../common/template/contentHeader"
@@ -10,7 +10,7 @@ class Dashboard extends Component {
   render() {
     const props = this.props
     return (
-      <div>
+      <Fragment>
         <ContentHeader title="Dashboard" small="Verao 1.0.0" />
         <Content>           
             
@@ -43,7 +43,7 @@ class Dashboard extends Component {
               </Row>
            
         </Content>
-      </div>
+      </Fragment>
     );
   }
 }

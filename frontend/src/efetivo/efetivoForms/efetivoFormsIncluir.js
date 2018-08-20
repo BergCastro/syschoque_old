@@ -15,10 +15,11 @@ import EnderecoContatoForm from "./enderecoContatoForm";
 import TabHeaderIncluir from "./tabHeaderIncluir";
 import TabsContentIncluir from "./tabsContentIncluir";
 import TabContentIncluir from "./tabContentIncluir";
+import FeriasForm from './feriasForm'
 
 class EfetivoFormsIncluir extends Component {
   render() {
-    const { handleSubmit, readOnly } = this.props;
+    const { handleSubmit, readOnly, fichaMilitar } = this.props;
 
     return (
       <form onSubmit={handleSubmit}>
@@ -33,8 +34,7 @@ class EfetivoFormsIncluir extends Component {
           <TabContentIncluir id="documentos">
             <DocumentosForm readOnly={readOnly} />
           </TabContentIncluir>
-
-          <TabContentIncluir id="ferias">Ferias</TabContentIncluir>
+          <TabContentIncluir id="ferias"><FeriasForm list={fichaMilitar.ferias}/></TabContentIncluir>
           <TabContentIncluir id="recompensas">Recompensas</TabContentIncluir>
           <TabContentIncluir id="cursos">Cursos</TabContentIncluir>
           <TabContentIncluir id="promocoes">Promoções</TabContentIncluir>
@@ -65,20 +65,8 @@ EfetivoFormsIncluir = reduxForm({
 
 const selector = formValueSelector("efetivoForm");
 const mapStateToProps = state => ({
-  numero: selector(state, "numero"),
-  assunto: selector(state, "assunto"),
-  conteudo: selector(state, "conteudo"),
-  status: selector(state, "status"),
-  statusAtual: selector(state, "statusAtual"),
-  efetivo: selector(
-    state,
-    "numero",
-    "assunto",
-    "referencia",
-    "conteudo",
-    "data",
-    "destino"
-  ),
+  fichaMilitar: selector(state, "fichaMilitar"),
+  
 
   user: state.auth.user
 });

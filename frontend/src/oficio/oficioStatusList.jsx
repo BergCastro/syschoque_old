@@ -35,7 +35,7 @@ class OficioStatusList extends Component {
     render() {
         return (
             
-                <table className='table'>
+                <table className='table table-condensed table-bordered'>
                     <thead>
                         <tr>
                             <th>Data</th>
