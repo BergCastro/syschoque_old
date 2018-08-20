@@ -9,6 +9,7 @@ const feriasSchema = new Schema({
     documento: String,
     inicio: Date,
     fim: Date,
+    tipo: String,
     obs: String
 })
 
